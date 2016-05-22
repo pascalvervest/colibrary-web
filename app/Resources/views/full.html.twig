@@ -1,22 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% block title %}{% endblock %}</title>
+        
         {% block stylesheets %}{% endblock %}
         <link rel="stylesheet" href="/assets/vendor/foundation-sites/dist/foundation.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/assets/css/foundation-icons/foundation-icons.css">
         <link rel="stylesheet" href="/assets/css/colibrary.css">
-        <link href='https://fonts.googleapis.com/css?family=Limelight|Comfortaa:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     
     <body>
+        
+        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle></button>
+            <div class="title-bar-title">Menu</div>
+        </div>
+
+        <div class="top-bar" id="main-menu">
+            <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="menu-text">coLibrary</li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+                    <li class="has-submenu">
+                        <a href="#">Pascal</a>
+                        <ul class="submenu menu vertical" data-submenu>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            
         <div class="content">
             {% block body %}{% endblock %}
+
         </div>
         <footer class="footer">{% block footer %}{% endblock %}</footer>
+        
+        <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="/assets/vendor/foundation-sites/dist/foundation.min.js"></script>
+        <script>$(document).foundation();</script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
