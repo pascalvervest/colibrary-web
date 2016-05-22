@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="/assets/vendor/foundation-sites/dist/foundation.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/assets/css/foundation-icons/foundation-icons.css">
+        <link rel="stylesheet" href="/assets/css/colibrary.css">
+        <link href='https://fonts.googleapis.com/css?family=Limelight|Comfortaa:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    
+    <body>
+        <div class="content">
+            {% block body %}{% endblock %}
+        </div>
+        <footer class="footer">{% block footer %}{% endblock %}</footer>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
