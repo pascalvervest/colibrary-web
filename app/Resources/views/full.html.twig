@@ -32,6 +32,7 @@
                         <li class="has-submenu">
                             <a href="#">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</a>
                             <ul class="submenu menu vertical" data-submenu>
+                                <li><a href="{{ path('fos_user_profile_show') }}">{{ 'menu.user.show_profile'|trans({}, 'AppBundle') }}</a></li>
                                 <li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
                             </ul>
                         </li>
