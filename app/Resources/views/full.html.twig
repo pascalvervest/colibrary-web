@@ -28,22 +28,32 @@
             </div>
             <div class="top-bar-right">
                 <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-                    <li class="has-submenu">
-                        <a href="#">Pascal</a>
-                        <ul class="submenu menu vertical" data-submenu>
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Settings</a></li>
-                            <li><a href="#">Logout</a></li>
-                        </ul>
-                    </li>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <li class="has-submenu">
+                            <a href="#">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</a>
+                            <ul class="submenu menu vertical" data-submenu>
+                                <li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
             
         <div class="content">
-            {% block body %}{% endblock %}
 
+        {% for type, messages in app.session.flashBag.all %}
+            {% for message in messages %}
+                <div class="{{ type }}">
+                    {{ message|trans({}, 'FOSUserBundle') }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% block body %}{% endblock %}
         </div>
+        
         <footer class="footer">{% block footer %}{% endblock %}</footer>
         
         <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
