@@ -5,32 +5,22 @@
 {% block fos_user_content %}
     
 {% if error %}
-    <div class="row medium-6 columns">
-        <div class="alert callout">
-            <h5>Error!</h5>
-            <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
-        </div>
+    <div class="alert callout">
+        <h5>Error!</h5>
+        <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
     </div>
 {% endif %}
 
 <form action="{{ path("fos_user_security_check") }}" method="post">
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-    <div class="row medium-6 columns">
-         <label for="username">{{ 'security.login.username'|trans }}
-            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-         </label>
-    </div>
-    <div class="row medium-6 columns">
-        <label for="password">{{ 'security.login.password'|trans }}
-            <input type="password" id="password" name="_password" required="required" />
-        </label>
-    </div>
-    <div class="row medium-6 columns">
-        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-    </div>
-    <div class="row medium-6 columns">
-        <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-    </div>
+    <label for="username">{{ 'security.login.username'|trans }}
+        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+    </label>
+    <label for="password">{{ 'security.login.password'|trans }}
+        <input type="password" id="password" name="_password" required="required" />
+    </label>
+    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 </form>
 {% endblock fos_user_content %}
