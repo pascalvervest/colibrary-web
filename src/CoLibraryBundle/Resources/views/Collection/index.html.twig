@@ -1,11 +1,11 @@
 {% extends "CoLibraryBundle::layout.html.twig" %}
 
 {% block collection %}
-    <a href="{{ path('collection_add') }}">Nieuwe toevoegen</a>
-    {#{% for item in items %}#}
-        {#{{ dump(item) }}#}
-    {#{% endfor %}#}
+
+    <h1>{{ 'collection.index.title'|trans }}</h1>
 
     {{ grid(grid, data) }}
+
+    <a href="{{ path('collection_add') }}" class="button">{{ 'collection.index.btn_new'|trans }}</a>
 
 {% endblock %}
