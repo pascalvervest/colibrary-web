@@ -1,4 +1,9 @@
 collection:
+  grid:
+    id: ID
+    artist: Artist
+    title: Title
+    barcode: Barcode
   index:
     btn_new: Add new item
     title: Collection overview

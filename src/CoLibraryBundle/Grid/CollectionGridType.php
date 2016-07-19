@@ -18,10 +18,18 @@ class CollectionGridType extends BaseGridType
     public function buildGrid(GridBuilder $builder, array $options = [])
     {
         $builder
-            ->addColumn('id', StringType::class)
-            ->addColumn('artist', StringType::class)
-            ->addColumn('title', StringType::class)
-            ->addColumn('barcode', StringType::class)
+            ->addColumn('id', StringType::class, [
+                'label' => 'collection.grid.id'
+            ])
+            ->addColumn('artist', StringType::class, [
+                'label' => 'collection.grid.artist'
+            ])
+            ->addColumn('title', StringType::class, [
+                'label' => 'collection.grid.title'
+            ])
+            ->addColumn('barcode', StringType::class, [
+                'label' => 'collection.grid.barcode'
+            ])
         ;
     }
 }
