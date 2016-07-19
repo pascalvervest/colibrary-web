@@ -8,12 +8,15 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
- * Item form
- * 
+ * Class ItemType
+ * @package CoLibraryBundle\Form
  * @author Pascal Vervest <pascalvervest@gmail.com>
  */
 class ItemType extends AbstractType
 {
+    /**
+     * {@inheritdoc
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder

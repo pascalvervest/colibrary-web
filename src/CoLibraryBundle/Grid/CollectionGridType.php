@@ -15,6 +15,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class CollectionGridType extends BaseGridType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildGrid(GridBuilder $builder, array $options = [])
     {
         $builder
