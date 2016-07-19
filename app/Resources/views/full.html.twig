@@ -24,7 +24,9 @@
             <div class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li class="menu-text"><a href="{{ path('homepage') }}">coLibrary</a></li>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li class="menu-text"><a href="{{ path('collection_index') }}">Collection</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <div class="top-bar-right">
