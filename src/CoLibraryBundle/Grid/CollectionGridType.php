@@ -35,7 +35,7 @@ class CollectionGridType extends BaseGridType
             ])
             ->addAction('edit', [
                 'label' => 'collection.grid.action_edit',
-                'route' => "collection_edit",
+                'route' => "item_edit",
                 'route_parameters' => [
                     'id' => '{id}'
                 ],
