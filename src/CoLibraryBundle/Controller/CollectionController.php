@@ -3,18 +3,16 @@
 namespace CoLibraryBundle\Controller;
 
 use CoLibraryBundle\Entity\Item;
+use CoLibraryBundle\Form\ItemType;
 use CoLibraryBundle\Grid\CollectionGridType;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-use CoLibraryBundle\Form\ItemType;
-
 /**
- * Collection controller
- * 
+ * Class CollectionController
+ * @package CoLibraryBundle\Controller
  * @author Pascal Vervest <pascalvervest@gmail.com>
  */
 class CollectionController extends Controller
@@ -22,10 +20,11 @@ class CollectionController extends Controller
     /**
      * @Route("/collection", name="collection_index")
      * @Template
+     *
+     * @return array
      */
     public function indexAction()
     {
-
         $items = $this
             ->getDoctrine()
             ->getRepository(Item::class)
@@ -44,7 +43,7 @@ class CollectionController extends Controller
      * @Template
      * 
      * @param Request $request
-     * @return type
+     * @return array
      */
     public function addAction(Request $request)
     {
