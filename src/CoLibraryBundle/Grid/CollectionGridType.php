@@ -19,16 +19,20 @@ class CollectionGridType extends BaseGridType
     {
         $builder
             ->addColumn('id', StringType::class, [
-                'label' => 'collection.grid.id'
+                'label' => 'collection.entity.id',
             ])
             ->addColumn('artist', StringType::class, [
-                'label' => 'collection.grid.artist'
+                'label' => 'collection.entity.artist'
             ])
             ->addColumn('title', StringType::class, [
-                'label' => 'collection.grid.title'
+                'label' => 'collection.entity.title'
             ])
             ->addColumn('barcode', StringType::class, [
-                'label' => 'collection.grid.barcode'
+                'label' => 'collection.entity.barcode'
+            ])
+            ->addAction('edit', [
+                'label' => 'collection.grid.action_edit',
+                'url' => '/collection/edit/{id}'
             ])
         ;
     }

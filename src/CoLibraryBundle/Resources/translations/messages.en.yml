@@ -1,9 +1,17 @@
 collection:
-  grid:
+  entity:
     id: ID
     artist: Artist
     title: Title
     barcode: Barcode
+  form:
+    btn_save: Save item
+    add:
+      title: Add item
+    edit:
+      title: Edit item
+  grid:
+    action_edit: edit
   index:
     btn_new: Add new item
     title: Collection overview
