@@ -21,6 +21,6 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
-        die('index van alles');
+        return [];
     }
 }
