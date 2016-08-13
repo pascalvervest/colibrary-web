@@ -42,6 +42,11 @@ class Item
      */
     private $barcode;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Collection")
+     * @ORM\JoinColumn(name="collection_id", referencedColumnName="id")
+     */
+    private $collection;
 
     /**
      * Get id
@@ -124,6 +129,27 @@ class Item
         return $this;
     }
 
+    /**
+     * Getter for collection
+     *
+     * @return mixed
+     */
+    public function getCollection()
+    {
+        return $this->collection;
+    }
 
+    /**
+     * Setter for collection
+     *
+     * @param mixed $collection
+     * @return self
+     */
+    public function setCollection($collection)
+    {
+        $this->collection = $collection;
+
+        return $this;
+    }
 }
 
