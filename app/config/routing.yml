@@ -1,11 +1,6 @@
-co_library:
-    resource: "@CoLibraryBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
-
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+co_library:
+  resource: "@CoLibraryBundle/Resources/config/routing.yml"
+  prefix: /

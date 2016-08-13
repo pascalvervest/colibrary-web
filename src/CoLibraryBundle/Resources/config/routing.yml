@@ -1,0 +1,13 @@
+colibrary:
+  prefix: /collection
+  resource: "@CoLibraryBundle/Controller/"
+
+#colibrary_collection:
+#  path: /
+#  defaults:
+#    _controller: CoLibraryBundle:Collection:index
+#
+#colibrary_item:
+#  path: /collection
+#  defaults:
+#    _controller: CoLibraryBundle:Item:index

@@ -13,6 +13,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 /**
  * Class ItemController
  * @package CoLibraryBundle\Controller
+ *
  * @author Pascal Vervest <pascalvervest@gmail.com>
  */
 class ItemController extends Controller
@@ -46,7 +47,7 @@ class ItemController extends Controller
     }
 
     /**
-     * @Route("item/edit/{id}", name="item_edit")
+     * @Route("/item/edit/{id}", name="item_edit")
      * @Template
      *
      * @param Request $request
