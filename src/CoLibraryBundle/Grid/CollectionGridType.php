@@ -2,7 +2,6 @@
 
 namespace CoLibraryBundle\Grid;
 
-use CoLibraryBundle\Grid\Type\IconTypeExtension;
 use Prezent\Grid\BaseGridType;
 use Prezent\Grid\Extension\Core\Type\StringType;
 use Prezent\Grid\GridBuilder;
