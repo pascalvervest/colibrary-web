@@ -35,6 +35,7 @@ class ItemGridType extends BaseGridType
             ])
             ->addAction('edit', [
                 'label' => 'collection.grid.action_edit',
+                'icon' => 'pencil',
                 'route' => "item_edit",
                 'route_parameters' => [
                     'id' => '{id}'

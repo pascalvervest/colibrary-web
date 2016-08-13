@@ -2,6 +2,7 @@
 
 namespace CoLibraryBundle\Grid;
 
+use CoLibraryBundle\Grid\Type\IconTypeExtension;
 use Prezent\Grid\BaseGridType;
 use Prezent\Grid\Extension\Core\Type\StringType;
 use Prezent\Grid\GridBuilder;
@@ -30,6 +31,7 @@ class CollectionGridType extends BaseGridType
             ])
             ->addAction('view', [
                 'label' => 'collection.grid.action_view',
+                'icon' => 'eye',
                 'route' => 'collection_view',
                 'route_parameters' => [
                     'id' => '{id}'
@@ -37,6 +39,7 @@ class CollectionGridType extends BaseGridType
             ])
             ->addAction('edit', [
                 'label' => 'collection.grid.action_edit',
+                'icon' => 'pencil',
                 'route' => "collection_edit",
                 'route_parameters' => [
                     'id' => '{id}'

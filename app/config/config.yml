@@ -72,6 +72,10 @@ fos_user:
     firewall_name: main
     user_class: AppBundle\Entity\User
 
+prezent_grid:
+  themes:
+    - CoLibraryBundle:Grid:grid.html.twig
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"

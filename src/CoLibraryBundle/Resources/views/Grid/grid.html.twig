@@ -1,0 +1,13 @@
+{% extends 'PrezentGridBundle:Grid:grid.html.twig' %}
+
+{%- block grid_action -%}
+    {% if icon is defined %}
+        {% if route is defined %}
+            <a href="{{ path(route, route_parameters) }}" title="{{ label|trans({}, label_translation_domain) }}" {{ block('grid_attributes') }}><i class="{{ icon }}"></i></a>
+        {% else %}
+            <a href="{{ url }}" title="{{ label|trans({}, label_translation_domain) }}" {{ block('grid_attributes') }}><i class="{{ icon }}"></i></a>
+        {% endif %}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{%- endblock -%}
