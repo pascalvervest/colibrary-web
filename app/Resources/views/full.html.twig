@@ -23,9 +23,9 @@
         <div class="top-bar" id="main-menu">
             <div class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="menu-text"><a href="{{ path('collection_index') }}">coLibrary</a></li>
+                    <li class="menu-text"><a href="{{ path('index_index') }}">coLibrary</a></li>
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li class="menu-text"><a href="{{ path('collection_index') }}">Collection</a></li>
+                    <li class="menu-text"><a href="{{ path('collection_index') }}">Collections</a></li>
                     {% endif %}
                 </ul>
             </div>

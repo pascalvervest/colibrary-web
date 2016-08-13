@@ -10,11 +10,10 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Class CollectionGridType
- *
  * @package CoLibraryBundle\Grid
  * @author Pascal Vervest <pascalvervest@gmail.com>
  */
-class CollectionGridType extends BaseGridType
+class ItemGridType extends BaseGridType
 {
     /**
      * {@inheritdoc}
@@ -23,21 +22,20 @@ class CollectionGridType extends BaseGridType
     {
         $builder
             ->addColumn('id', StringType::class, [
-                'label' => 'collection.entity.id',
+                'label' => 'collection.item.entity.id',
             ])
-            ->addColumn('name', StringType::class, [
-                'label' => 'collection.entity.name'
+            ->addColumn('artist', StringType::class, [
+                'label' => 'collection.item.entity.artist'
             ])
-            ->addAction('view', [
-                'label' => 'collection.grid.action_view',
-                'route' => 'collection_view',
-                'route_parameters' => [
-                    'id' => '{id}'
-                ]
+            ->addColumn('title', StringType::class, [
+                'label' => 'collection.item.entity.title'
+            ])
+            ->addColumn('barcode', StringType::class, [
+                'label' => 'collection.item.entity.barcode'
             ])
             ->addAction('edit', [
                 'label' => 'collection.grid.action_edit',
-                'route' => "collection_edit",
+                'route' => "item_edit",
                 'route_parameters' => [
                     'id' => '{id}'
                 ],

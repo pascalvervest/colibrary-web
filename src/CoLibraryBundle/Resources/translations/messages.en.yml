@@ -1,17 +1,25 @@
 collection:
   entity:
     id: ID
-    artist: Artist
-    title: Title
-    barcode: Barcode
+    name: Name
   form:
-    btn_save: Save item
+    btn_save: Save collection
     add:
-      title: Add item
+      title: Add collection
     edit:
-      title: Edit item
+      title: Edit collection
   grid:
     action_edit: edit
+    action_view: view
   index:
-    btn_new: Add new item
+    btn_new: Add new collection
     title: Collection overview
+  item:
+    button:
+      btn_new: Add new item
+      btn_save: Save item
+    entity:
+      artist: Artist
+      barcode: Barcode
+      id: ID
+      title: Title

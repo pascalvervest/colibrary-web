@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 /**
  * Class ItemType
@@ -21,16 +22,22 @@ class ItemType extends AbstractType
     {
         $builder
             ->add('artist', TextType::class, [
-                'label' => 'collection.entity.artist'
+                'label' => 'collection.item.entity.artist'
             ])
             ->add('title', TextType::class, [
-                'label' => 'collection.entity.title'
+                'label' => 'collection.item.entity.title'
             ])
             ->add('barcode', TextType::class, [
-                'label' => 'collection.entity.barcode'
+                'label' => 'collection.item.entity.barcode'
             ])
+            ->add('collection', EntityType::class, [
+                'class' => 'CoLibraryBundle:Collection',
+                'choice_label' => 'name'
+
+            ])
+
             ->add('save', SubmitType::class, [
-                'label' => 'collection.form.btn_save',
+                'label' => 'collection.item.button.btn_save',
                 'attr' => [
                     'class' => 'button'
                 ]
